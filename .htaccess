@@ -1,0 +1,16 @@
+
+# Ativa o mode de escrita deixando em "On"
+RewriteEngine On 
+
+# Reconhece todos os arquivos do projeto. 
+RewriteCond %{REQUEST_FILENAME} !-f   
+
+# Reconhece todos os diretórios do projeto.
+RewriteCond %{REQUEST_FILENAME} !-d   
+
+RewriteRule ^(.*)$ index.php?router=$1 [QSA,L] 
+
+# index.php?router  
+    # a variavel "router" é armazena o caminho na url exemplo:
+            # http://localhost/crud-mvc/Site/editar/45
+                # no exemplo acima, o conteudo /Site/editar/45 esta armazenado na variavel "router"  -> RewriteRule ^(.*)$ index.php?router=$1 [QSA,L] 

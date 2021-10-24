@@ -1,0 +1,5 @@
+--*************** Select Inventario impressora Fibrocimento --***************
+
+SELECT i.id,ma.nome AS marca, mo.nome AS modelo,i.serialNumber,i.patrimonio,i.tipo,i.ip,st.nome AS status,se.nome AS setor,i.date_create
+       FROM tbl_impressora AS i, tbl_modelo AS mo, tbl_marca AS ma, tbl_status AS st, tbl_setor AS se
+       WHERE i.tbl_modelo_id = mo.id AND mo.tbl_marca_id = ma.id AND i.tbl_status_id = st.id AND i.tbl_setor_id = se.id AND se.empresa = 'Fibrocimento'"

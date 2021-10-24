@@ -1,0 +1,1 @@
+UPDATE `tbl_impressora` SET `tbl_modelo_id`=16,`serialNumber`='VACALOCA',`patrimonio`='IMPVACALOCA',`tipo`='REDE',`ip`='192.VACA.0',`tbl_status_id`=1,`tbl_setor_id`=8,`date_modified`=NOW() WHERE 76
