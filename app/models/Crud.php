@@ -110,9 +110,9 @@ class Crud extends Connection
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-      $clientes_inativos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+      $clientes = $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
-    return $clientes_inativos;
+    return $clientes;
   }
 
   function get_clientes_inativos()
@@ -138,9 +138,9 @@ class Crud extends Connection
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-      $clientes_inativos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+      $clientes_ativos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
-    return $clientes_inativos;
+    return $clientes_ativos;
   }
 
   function get_status_pedido()
