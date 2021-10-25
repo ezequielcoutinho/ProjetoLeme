@@ -35,7 +35,7 @@ class CadastroCliente extends Crud
 
         $result_data = $data_atual - $data_nacimento;
 
-        if ($result_data <= $idade_minima) {
+        if ($result_data < $idade_minima) {
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Erro</strong> ao cadastrar! idade mínima : ' . $idade_minima . ' anos' . '
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
