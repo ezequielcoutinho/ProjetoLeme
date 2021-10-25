@@ -14,8 +14,34 @@ class Crud extends Connection
     $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
     $situacao_cliente = filter_input(INPUT_POST, 'situacao_cliente', FILTER_SANITIZE_STRING);
 
+    $conn = $this->connect();
+    $sql = ('SELECT * FROM `clientes` WHERE `cpf` = :cpf');
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':cpf', $cpf, \PDO::PARAM_STR);
+    $stmt->execute();
 
     $conn = $this->connect();
+    $sql = ('SELECT * FROM `clientes` WHERE `telefone` = :telefone');
+    $stmtTelefone = $conn->prepare($sql);
+    $stmtTelefone->bindParam(':telefone', $telefone, \PDO::PARAM_STR);
+    $stmtTelefone->execute();
+
+    if ($stmt->RowCount() > 0 ) {
+      $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Erro ao cadastrar!</strong> este cpf já esta sendo utilizado! 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }elseif ($stmtTelefone->RowCount() > 0) {
+      $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Erro ao cadastrar!</strong> este telefone já esta sendo utilizado! 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }else {
+      $conn = $this->connect();
     $sql = ('INSERT INTO `clientes`(`nome`, `cpf`, `data_nasc`, `telefone`, `ativo`) VALUES (:nome, :cpf, :data_nasc, :telefone, :situacao_cliente)');
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':nome', $nome, \PDO::PARAM_STR);
@@ -37,7 +63,8 @@ class Crud extends Connection
     }
 
     return $stmt;
-    //exit();
+    }
+
   }
 
   function create_pedido()
@@ -100,6 +127,7 @@ class Crud extends Connection
 
     return $stmt;
   }
+
 
   function get_clientes()
   {

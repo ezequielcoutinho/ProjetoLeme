@@ -8,7 +8,7 @@ abstract class Connection
 {
     private $dbname = 'mysql:host=localhost; dbname=db_leme';
     private $user = 'root';
-    private $pass = 'admin';
+    private $pass = '1q2w3e4r5t6y7u@@M';
 
     protected function connect()
     {
