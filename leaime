@@ -4,35 +4,7 @@
     - PHP 7.4.3 -> https://www.php.net/
     - Apache 2.4.41 -> https://www.apache.org/
     - Bootstrap -> 4.6 https://getbootstrap.com/docs/4.6/getting-started/introduction/
-    - Font Aewsime -> https://fontawesome.com/
+    - Fontawesome -> https://fontawesome.com/
     
 
-O Designer de Produto requisitou as seguintes mudanças que deveriam ser realizadas no site da Leme (https://lemeforense.com.br/).
-Na seção "ENTRE EM CONTATO CONOSCO"
-
-A - A fonte do título deve ser "Merriweather"
-R: Verdadeiro
-
-B - A fonte do subtítulo deve ser "Montserrat"
-R: Verdedairo
-
-C - Botão "ENVIAR MENSAGEM" na seção deve ter 15px de margem no topo
-R:
-
-D - A cor do botão "ENVIAR MENSAGEM" deve ser #7589A7 no estado hover
-No footer
-R: Falso
-
-E - A cor do plano de fundo do footer deve ser #1e425c
-R: Verdadeiro
-
-F - A cor dos títulos das subseções "Contato" e "Endereço" devem ter a cor #f5f1f2
-R: Falso
-
-G - Link do endereço da Leme para página da Google Maps
-R: Falso não possui link para o Google Maps
-
-H -Espaço de 35 px acima e abaixo da linha de texto "Desenvolvido com coração por Evoline."
-Verifique se os desenvolvedores cumpriram as especificações para cada um dos itens requisitados e indique os resultados.
-R: Verdadeiro
 

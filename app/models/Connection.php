@@ -13,7 +13,7 @@ abstract class Connection
     protected function connect()
     {
         session_start();
-    //  $empresa =  $_SESSION['empresa'] = 'Fibrocimento';
+    
         try {
             $conn = new \PDO($this->dbname, $this->user, $this->pass);
             $conn->exec('set names utf8');
